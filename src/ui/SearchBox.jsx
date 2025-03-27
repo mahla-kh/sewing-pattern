@@ -40,11 +40,12 @@ function SearchBox() {
           placeholder="دنبال چی میگردی ؟"
           value={search}
           onFocus={() => setIsOpenResults(true)}
+          onBlur={() => setSearch("")}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       {isOpenResults && results.length > 0 && (
-        <div className="absolute transition-all duration-300 mx-auto mt-1 bg-white shadow-lg rounded-md z-10">
+        <div className="absolute transition-all w-[75%] sm:w-[29rem]  duration-300 mx-auto mt-1 bg-white shadow-lg rounded-md z-10">
           <ul className="max-h-60 overflow-y-auto">
             {results.map((item, index) => (
               <li
