@@ -10,10 +10,6 @@ function MobileNavBar({ ref }) {
   const categories = megaMenu.map((item) => item.category);
   const display = whatIsOpen === "cat" ? categories : items;
 
-  console.log(headerCategory);
-  console.log(whatIsOpen);
-  console.log(items);
-  console.log(display);
   return (
     <div ref={ref} className="transition-transform duration-300">
       <nav

@@ -1,18 +1,44 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AppLayout from "./ui/AppLayout";
+import Error from "./ui/Error";
+import Women from "./pages/Women";
+import Men from "./pages/Men";
+import Children from "./pages/Children";
+import Fantasy from "./pages/Fantasy";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    errorElement: <Error />,
+
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/women",
+        element: <Women />,
+      },
+      {
+        path: "/men",
+        element: <Men />,
+      },
+      {
+        path: "/children",
+        element: <Children />,
+      },
+      {
+        path: "/fantacy",
+        element: <Fantasy />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/" element={<HomePage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;

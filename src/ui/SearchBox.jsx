@@ -24,7 +24,6 @@ function SearchBox() {
         );
         setResults(searchResults);
       }
-      console.log("search", results);
     },
     [search]
   );
