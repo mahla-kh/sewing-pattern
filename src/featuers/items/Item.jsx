@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { formatCurrency } from "../hooks/helper";
+import { formatCurrency } from "../../hooks/helper";
 import { FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 // import { useMutation } from "@tanstack/react-query";
 // import { updateWomen } from "../services/women";
 // import Spinner from "../ui/Spinner";
 
 function Item({ item }) {
-  const { name, price, imageFront, imageBack } = item;
+  const { id, name, price, imageFront, imageBack } = item;
   const [isHovered, setIsHovered] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -17,7 +18,10 @@ function Item({ item }) {
   //   if (isUpdating) return <Spinner />;
   console.log(item);
   return (
-    <div className="flex flex-col relative gap-1 sm:gap-3 w-40 sm:w-60 bg-white border border-gray-200 rounded-lg shadow-md p-4 transition-transform transform hover:scale-105">
+    <Link
+      to={`${id}`}
+      className="flex flex-col relative gap-1 sm:gap-3 w-40 sm:w-60 bg-white border border-gray-200 rounded-lg shadow-md p-4 transition-transform transform hover:scale-105"
+    >
       <span
         onClick={() => setIsLiked((like) => !like)}
         className="absolute top-3 left-3 z-0"
@@ -42,7 +46,7 @@ function Item({ item }) {
       <span className="text-md font-medium text-blue-600">
         {formatCurrency(price)}
       </span>
-    </div>
+    </Link>
   );
 }
 

@@ -36,7 +36,6 @@ function SearchBox() {
         </span>
         <input
           className="px-1 focus:outline-none"
-          id="searchBox"
           placeholder="دنبال چی میگردی ؟"
           value={search}
           onFocus={() => setIsOpenResults(true)}

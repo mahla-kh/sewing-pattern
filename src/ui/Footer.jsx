@@ -32,7 +32,7 @@ function Footer() {
 
         {/* بخش پایین */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 pt-6">
-          <p>© 2025 تمامی حقوق محفوظ است.</p>
+          <p>{`© ${new Date().getFullYear()} تمامی حقوق محفوظ است.`}</p>
           <p>ساخته شده توسط خودم </p>
         </div>
       </div>

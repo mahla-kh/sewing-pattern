@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { getWomen } from "../services/women";
 import Spinner from "../ui/Spinner";
-import ItemsLayOut from "../featuers/ItemsLayOut";
+import ItemsLayOut from "../featuers/items/ItemsLayOut";
 
 function Women() {
   const {
@@ -15,9 +15,9 @@ function Women() {
   });
   if (isLoading) return <Spinner />;
   return (
-    <div>
+    <>
       <ItemsLayOut items={womenItems} />
-    </div>
+    </>
   );
 }
 

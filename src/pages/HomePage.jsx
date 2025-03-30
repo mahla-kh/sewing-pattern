@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function HomePage() {
   return (
-    <div>
+    <>
       <h2>Home Page</h2>
       <div className="flex flex-col bg-white p-5 gap-4 w-[70%] mx-auto shadow-2xl rounded-lg border-2 border-gray-100">
         <div className="flex flex-row gap-4">
@@ -22,7 +22,7 @@ function HomePage() {
           </Link>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
