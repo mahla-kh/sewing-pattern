@@ -5,7 +5,7 @@ import { TfiEmail } from "react-icons/tfi";
 
 function Footer() {
   return (
-    <footer className="text-gray-800 bg-white py-10">
+    <footer className="text-gray-800 border-t border-gray-200 bg-white py-10">
       <div className="container mx-auto px-6">
         {/* بخش بالا */}
         <div className="flex flex-col sm:flex-row justify-between items-center border-b border-gray-700 pb-6">

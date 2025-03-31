@@ -106,7 +106,7 @@ MegaMenu.propTypes = {
 
 const DesctopNavbar = () => {
   return (
-    <nav className="flex space-x-6 shadow-md">
+    <nav className="flex space-x-6">
       {megaMenu.map((item) => (
         <MegaMenu
           category={item.category}

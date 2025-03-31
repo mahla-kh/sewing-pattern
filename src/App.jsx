@@ -14,6 +14,11 @@ import ItemShowFull, { loader as oneItemLoader } from "./pages/ItemShowFull";
 import ProfileLayout from "./featuers/profile/ProfileLayout";
 import WishList from "./featuers/profile/WishList";
 import ProfileInfo from "./featuers/profile/ProfileInfo";
+import ProfileAddress from "./featuers/profile/ProfileAddress";
+import ProfileMeasurments from "./featuers/profile/ProfileMeasurments";
+import ProfileNotifs from "./featuers/profile/ProfileNotifs";
+import ProfileOrders from "./featuers/profile/ProfileOrders";
+import ProfileSettings from "./featuers/profile/ProfileSettings";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +55,26 @@ const router = createBrowserRouter([
           {
             path: "/profile/wish-list",
             element: <WishList />,
+          },
+          {
+            path: "/profile/address",
+            element: <ProfileAddress />,
+          },
+          {
+            path: "/profile/measure",
+            element: <ProfileMeasurments />,
+          },
+          {
+            path: "/profile/notifs",
+            element: <ProfileNotifs />,
+          },
+          {
+            path: "/profile/orders",
+            element: <ProfileOrders />,
+          },
+          {
+            path: "/profile/settings",
+            element: <ProfileSettings />,
           },
         ],
       },

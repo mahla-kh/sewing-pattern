@@ -13,7 +13,7 @@ function Header() {
   useOutsideClick(ref, () => setIsMobMenuOpen(false));
 
   return (
-    <header className="w-full bg-white sticky top-0 z-50 shadow-md p-4">
+    <header className="w-full bg-white sticky border-b border-gray-200  top-0 z-50 shadow-2xl p-4">
       <div className="sm:flex container mx-auto hidden justify-between items-center">
         <Logo />
         <SearchBox />
