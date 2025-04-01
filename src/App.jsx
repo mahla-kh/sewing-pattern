@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import HomePage from "./pages/HomePage";
-import LoginLayOut from "./pages/LoginLayOut";
+import LoginLayOut from "./pages/loginLayOut";
 import Error from "./ui/Error";
 import Women from "./pages/Women";
 import Men from "./pages/Men";
@@ -11,7 +11,7 @@ import Fantasy from "./pages/Fantasy";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import ItemShowFull, { loader as oneItemLoader } from "./pages/ItemShowFull";
-import ProfileLayout from "./featuers/profile/ProfileLayout";
+import ProfileLayout from "./pages/ProfileLayout";
 import WishList from "./featuers/profile/WishList";
 import ProfileInfo from "./featuers/profile/ProfileInfo";
 import ProfileAddress from "./featuers/profile/ProfileAddress";
@@ -19,6 +19,8 @@ import ProfileMeasurments from "./featuers/profile/ProfileMeasurments";
 import ProfileNotifs from "./featuers/profile/ProfileNotifs";
 import ProfileOrders from "./featuers/profile/ProfileOrders";
 import ProfileSettings from "./featuers/profile/ProfileSettings";
+import { Toaster } from "react-hot-toast";
+import SignupForm from "./pages/SignUpForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginLayOut />,
+      },
+      {
+        path: "/signup",
+        element: <SignupForm />,
       },
       {
         path: "/profile",
@@ -109,6 +115,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <RouterProvider router={router} />;
+      <Toaster position="top-center" />
     </QueryClientProvider>
   );
 }
