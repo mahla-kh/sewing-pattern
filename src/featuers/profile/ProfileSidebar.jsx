@@ -10,10 +10,13 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { useLogout } from "../authentication/useLogout";
 import SpinnerMini from "../../ui/SpinnerMini";
 import { useUser } from "../authentication/useUser";
+// import { getCurrentUser } from "../../services/auth";
 function ProfileSidebar() {
   const { logout, isLoading: loggingout } = useLogout();
+  // const user = getCurrentUser();
   const { user } = useUser();
-  const username = user.user_metadata.fullName;
+  console.log(user);
+  const username = user.username;
   return (
     <div className="flex mt-6 flex-col">
       <div

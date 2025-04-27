@@ -9,6 +9,9 @@ export function useLogin() {
   const { mutate: login, status } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (data) => {
+      console.log("success", data.user);
+      // localStorage.setItem("token", data.token);
+
       queryClient.setQueryData(["user", data.user]);
       toast.success("در حال انتقال ...");
       navigate("/profile", { replace: true });
